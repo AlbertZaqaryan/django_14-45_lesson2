@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}"><button>Calculator</button></a>
+        <a href="{% url 'contact' %}"><button>Contact</button></a>
+    </header>
+    <h1>Admin page</h1>
+    <hr>
+    <h3 style="text-align: center;">Questions</h3>
+        {% for i in info_list %}
+            <p>{{ i }}</p>
+            {% if i %}
+                <form action="{% url 'delete_user' %}">
+                    {% csrf_token %}
+                    <button name="name" value="{{ i }}">x</button>
+                </form>
+            {% endif %}
+        {% endfor %}
+</body>
+</html>

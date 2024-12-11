@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}"><button>Calculator</button></a>
+        <a href="{% url 'admin_page' %}"><button>Admin</button></a>
+    </header>
+    <h1>Contact page</h1>
+    <hr>
+
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <input type="email" name="email" placeholder="email">
+        </p>
+        <p>
+            <input type="text" name="phone" placeholder="phone">
+        </p>
+        <p>
+            <input type="text" name="question" placeholder="question">
+        </p>
+        <button>Send info</button>
+
+    </form>
+    
+</body>
+</html>

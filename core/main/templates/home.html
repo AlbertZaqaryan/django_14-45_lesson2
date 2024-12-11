@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'contact' %}"><button>Contact</button></a>
+        <a href="{% url 'admin_page' %}"><button>Admin</button></a>
+    </header>
+    <h1>Calculator</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="n1"  placeholder="number1">
+        <input type="text" name="char"  placeholder="char">
+        <input type="number" name="n2"  placeholder="number2">
+        <br>
+        <button>=</button>
+    </form>
+    <h3>Result = {{ res }}</h3>
+</body>
+</html>
